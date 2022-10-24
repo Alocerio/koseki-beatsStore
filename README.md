@@ -1,1 +1,1 @@
-# OMDB Catalog 
+# Hip-hop Beats React catalog
