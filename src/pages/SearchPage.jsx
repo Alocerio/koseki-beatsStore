@@ -1,6 +1,7 @@
 import { Fragment, useEffect, useState } from "react";
 
 import MoviesList from "../components/MoviesList";
+import Navbar from "../components/Navbar";
 
 import Search from "../utils/Search";
 
@@ -21,13 +22,14 @@ function Header({ bottomRef }) {
   });
   return (
     <Fragment>
+      <Navbar></Navbar>
       <div id="Searching" className="text-center justify-center">
         <h1
           className="text-4xl text-center font-bold p-5
      underline bg-clip-text text-transparent bg-gradient-to-r
      from-bg to-white"
         >
-          Search
+          Catalog
         </h1>
         <Search
           searchMovies={searchMovies}
