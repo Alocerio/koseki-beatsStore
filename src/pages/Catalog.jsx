@@ -7,11 +7,21 @@ const Catalog = () => {
   useEffect(() => {}, []);
   return (
     <>
-      <h1 className="text-center font-black text-5xl p-10">BEATS</h1>
-      <div className="text-center p-5 flex flex-wrap justify-center">
+      <h1 className="text-center underline font-black text-5xl p-10">
+        BEATS ON SALE
+      </h1>
+      <div className="text-center p-5 flex flex-wrap justify-center mb-36">
         {beats.map((beat) => {
-          const { key, name, videoUrl } = beat;
-          return <BeatCard key={key} name={name} videoUrl={videoUrl} />;
+          const { id, name, videoUrl, tags, bpm } = beat;
+          return (
+            <BeatCard
+              key={id}
+              name={name}
+              videoUrl={videoUrl}
+              tags={tags}
+              bpm={bpm}
+            />
+          );
         })}
       </div>
     </>
