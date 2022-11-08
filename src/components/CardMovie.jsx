@@ -1,4 +1,6 @@
 import React from "react";
+import ReactAudioPlayer from "react-audio-player";
+import beats from "../assets/audio/H98.wav";
 
 const CardMovie = ({ movie }) => {
   const { Title, Year, Poster } = movie;
@@ -10,6 +12,7 @@ const CardMovie = ({ movie }) => {
         </h5>
         <img src={Poster} alt="" />
         <p class="text-gray-700 text-base mb-4">Release date: {Year}</p>
+        <ReactAudioPlayer src={beats} loop controls />
       </div>
     </li>
   );

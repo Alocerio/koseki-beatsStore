@@ -1,14 +1,20 @@
-[{
-   "id": 1,
-   "name": "Timeless",
-   "sold": false,
-   "bpm": 86,
-   "description": "Beat slower than you can beat in my heart."
-},{
-   "id": 1,
-   "name": "Timeless",
-   "sold": false,
-   "bpm": 86,
-   "description": "Beat slower than you can beat in my heart."
-}
+[
+  {
+    "name": "Timeless",
+    "bpm": 87,
+    "videoUrl": "https://www.youtube.com/watch?v=6tiI9u7f8-U&t=22s&ab_channel=Koseki",
+    "tags": ["chill", "boombap", "low-bap"]
+  },
+  {
+    "name": "Crime",
+    "bpm": 80,
+    "videoUrl": "https://www.youtube.com/watch?v=zHehleec5dg&ab_channel=Koseki",
+    "tags": ["dark", "boombap"]
+  },
+  {
+    "name": "Low raiders",
+    "bpm": 84,
+    "videoUrl": "https://www.youtube.com/watch?v=wWhmTRV5jW4&ab_channel=Koseki",
+    "tags": ["drumless", "boombap", "west side sample"]
+  }
 ]

@@ -4,11 +4,11 @@ const Footer = () => {
   return (
     <footer
       className=" fixed
-             inset-x-0
+             inset-x-0 
              bottom-0 text-center flex justify-center bg-white text-white"
     >
-      <div className="container px-6 pt-6">
-        <div className="flex justify-center mb-6">
+      <div className="container border border-black  px-6 pt-6">
+        <div className="flex  justify-center mb-6">
           <a
             href="mailto:leandrobordondev@gmail.com"
             type="button"

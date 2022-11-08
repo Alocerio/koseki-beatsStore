@@ -1,8 +1,6 @@
 import { Fragment, useEffect, useState } from "react";
-
 import MoviesList from "../components/MoviesList";
 import Navbar from "../components/Navbar";
-
 import Search from "../utils/Search";
 
 const MOVIES = "https://www.omdbapi.com/?i=tt3896198&apikey=4f85dd67&";
