@@ -3,7 +3,7 @@ import Backbtn from "../utils/BtnBack";
 const Footer = () => {
   return (
     <footer
-      className="fixed
+      className="relative
              inset-x-0 
              bottom-0 text-center flex justify-center bg-white text-white"
     >

@@ -1,7 +1,7 @@
 //https://www.youtube.com/watch?v=FmalodIhcK4&ab_channel=Koseki
 const Hero = () => {
   return (
-    <section className="flex justify-center items-center sx:px-3 sx:pt-10  xl:pt-32">
+    <section className="flex justify-center items-center sx:px-3 h-screen">
       <div className="mx-auto max-w-[43rem]">
         <div className="text-center">
           <p className="text-lg font-medium leading-8">KRS-ONE once said: </p>
