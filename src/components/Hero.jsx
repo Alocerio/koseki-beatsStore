@@ -1,39 +1,38 @@
-import koseki from "../assets/koseki.png";
-import ReactPlayer from "react-player";
-
+//https://www.youtube.com/watch?v=FmalodIhcK4&ab_channel=Koseki
 const Hero = () => {
   return (
-    <div className=" h-screen  bg-[url('/src/assets/bg.jpg')] flex justify-center bg-cover drop-shadow-2xl text-white ">
-      <div className="max-w-sm p-12 ">
-        <div className="flex justify-center">
-          <img src={koseki} className="text-center w-80" alt="koseki" />
+    <section className="flex justify-center items-center sx:px-3 sx:pt-10  xl:pt-32">
+      <div className="mx-auto max-w-[43rem]">
+        <div className="text-center">
+          <p className="text-lg font-medium leading-8">KRS-ONE once said: </p>
+          <h1 className="mt-3 text-[3.5rem] font-bold leading-[4rem] tracking-tight text-black">
+            "Hip hop is a human skill, and the practice of real hip hop should
+            remind us of our humanity."
+          </h1>
+          <p className="mt-3 text-lg leading-relaxed text-slate-400">
+            Welcome to the web, here you will find the compilation of my work
+            and more important you can listen and buy my instrumentals directly.
+          </p>
         </div>
 
-        <div className="p-5 text-center  rounded-xl px-10   ">
-          <h3 className="text-xl italic text-white font-normal drop-shadow-2xl  mb-8 ">
-            "Your next hit music could be starting from here"
-          </h3>
+        <div className="mt-6 flex items-center justify-center gap-4">
           <a
-            className="inline-block px-10 py-2.5 bg-white hover:text-white hover:bg-secondary text-bg font-medium text-md leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
-            data-mdb-ripple="true"
-            data-mdb-ripple-color="light"
-            href="/search"
-            role="button"
+            type="button"
+            href="/beats"
+            class="transform rounded-md bg-black px-5 py-3 font-medium text-white transition-colors hover:bg-indigo-700"
           >
-            Let's start
+            Find your beat
+          </a>
+          <a
+            href="/"
+            className="transform rounded-md border border-slate-200 px-5 py-3 font-medium text-slate-900 transition-colors hover:bg-slate-50"
+          >
+            {" "}
+            Licences{" "}
           </a>
         </div>
-        <div className="flex justify-center aspect-video ">
-          <ReactPlayer
-            volume={0.3}
-            playing="true"
-            className="aspect-video md:w-4 sm-w-1"
-            loop="true"
-            url="https://www.youtube.com/watch?v=FmalodIhcK4&ab_channel=Koseki"
-          />
-        </div>
       </div>
-    </div>
+    </section>
   );
 };
 

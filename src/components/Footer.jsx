@@ -1,14 +1,17 @@
 import React from "react";
-
+import Backbtn from "../utils/BtnBack";
 const Footer = () => {
   return (
     <footer
-      className=" fixed
+      className="fixed
              inset-x-0 
              bottom-0 text-center flex justify-center bg-white text-white"
     >
       <div className="container border border-black  px-6 pt-6">
-        <div className="flex  justify-center mb-6">
+        <div className="left-2 absolute pt-2 pl-1 flex justify-center">
+          <Backbtn />
+        </div>
+        <div className="flex justify-end mb-6">
           <a
             href="mailto:leandrobordondev@gmail.com"
             type="button"
@@ -85,7 +88,7 @@ const Footer = () => {
 
       <div className="text-center italic hover:underline flex  p-4 bg-bg ">
         © 2022
-        <a className="  " href="https://leandrobordon.com">
+        <a className="#" href="https://leandrobordon.com">
           Leandro Bordon
         </a>
       </div>

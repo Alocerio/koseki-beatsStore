@@ -3,18 +3,22 @@ import Logo from "../assets/kosekii.png";
 import styled from "styled-components";
 import BurgerBtn from "../utils/burgerBtn";
 
-const Navbar = () => {
+const Navbar = ({ isAuth, signUserOut }) => {
   const [clicked, setClicked] = useState(false);
-
+  const authBoolean = isAuth;
   const handleClick = () => {
     return setClicked(!clicked);
   };
   return (
     <NavContainer>
-      <div class="bg-gray-100 font-sans w-full m-0">
-        <div class="bg-white  shadow">
-          <div class="container mx-auto px-4">
-            <div class="flex items-center justify-between py-4">
+      <div
+        className="
+             inset-x-0 
+             top-0 bg-gray-100 font-sans w-full m-0"
+      >
+        <div className="bg-white  shadow">
+          <div className="container mx-auto px-4">
+            <div className="flex items-center justify-between py-4">
               <div>
                 <a href="/">
                   <img src={Logo} className="w-24 " alt="s" />
@@ -24,43 +28,44 @@ const Navbar = () => {
               <div class="hidden sm:flex sm:items-center">
                 <a
                   href="/"
-                  class="text-gray-800 text-sm font-semibold hover:text-purple-600 mr-4"
+                  class=" text-gray-800 text-sm font-semibold hover:underline mr-4"
                 >
-                  Products
+                  Home
                 </a>
                 <a
-                  href="/"
-                  class="text-gray-800 text-sm font-semibold hover:text-purple-600 mr-4"
+                  href="/beats"
+                  class="text-gray-800 text-sm font-semibold hover:underline hover:text-purple-600 mr-4"
                 >
-                  Marketplace
+                  Find yout beat
                 </a>
+
                 <a
                   href="/"
-                  class="text-gray-800 text-sm font-semibold hover:text-purple-600 mr-4"
+                  class="text-gray-800 text-sm font-semibold hover:underline hover:text-purple-600"
                 >
-                  Partners
-                </a>
-                <a
-                  href="/"
-                  class="text-gray-800 text-sm font-semibold hover:text-purple-600"
-                >
-                  Pricing
+                  Contact
                 </a>
               </div>
 
               <div class="hidden sm:flex sm:items-center">
-                <a
-                  href="/"
-                  class="text-gray-800 text-sm font-semibold hover:text-purple-600 mr-4"
-                >
-                  Sign in
-                </a>
-                <a
-                  href="/"
-                  class="text-gray-800 text-sm font-semibold border px-4 py-2 rounded-lg hover:text-purple-600 hover:border-purple-600"
-                >
-                  Sign up
-                </a>
+                {!authBoolean ? (
+                  <a
+                    to="/login"
+                    href="/login"
+                    class="text-black text-sm font-semibold hover:underline hover:text-white hover:rounded-sm px-1 hover:bg-black mr-4"
+                  >
+                    Login
+                  </a>
+                ) : (
+                  <a
+                    to="/login"
+                    href="/login"
+                    onClick={signUserOut}
+                    class="text-black text-sm font-semibold hover:underline hover:text-white hover:rounded-sm px-1 hover:bg-black mr-4"
+                  >
+                    Log out
+                  </a>
+                )}
               </div>
 
               <div class="sm:hidden cursor-pointer"></div>
@@ -68,48 +73,54 @@ const Navbar = () => {
             <BurgerContainer className={`${clicked ? "efx" : ""}`}>
               <div>
                 <div
-                  class={`${
+                  className={`${
                     clicked ? "block" : "hidden"
                   } sm:hidden  bg-white border-t-2 py-2`}
                 >
-                  <div class="flex flex-col">
+                  <div className="flex flex-col">
                     <a
                       href="/"
-                      class="text-gray-800 text-sm font-semibold hover:text-purple-600 mb-1"
+                      className="text-gray-800 text-sm font-semibold hover:text-purple-600 mb-1"
                     >
-                      Products
+                      Home
+                    </a>
+                    <a
+                      href="/beats"
+                      className="text-gray-800 text-sm font-semibold hover:text-purple-600 mb-1"
+                    >
+                      Find your beat
                     </a>
                     <a
                       href="/"
-                      class="text-gray-800 text-sm font-semibold hover:text-purple-600 mb-1"
+                      className="text-gray-800 text-sm font-semibold hover:text-purple-600 mb-1"
                     >
-                      Marketplace
+                      Licenses
                     </a>
                     <a
                       href="/"
-                      class="text-gray-800 text-sm font-semibold hover:text-purple-600 mb-1"
+                      className="text-gray-800 text-sm font-semibold hover:text-purple-600 mb-1"
                     >
-                      Partners
+                      Contact
                     </a>
-                    <a
-                      href="/"
-                      class="text-gray-800 text-sm font-semibold hover:text-purple-600 mb-1"
-                    >
-                      Pricing
-                    </a>
-                    <div class=" top flex justify-between items-center border-t-2 pt-2">
-                      <a
-                        href="/"
-                        class="text-gray-800 text-sm font-semibold hover:text-purple-600 mr-4"
-                      >
-                        Sign in
-                      </a>
-                      <a
-                        href="/"
-                        class="text-gray-800 text-sm font-semibold border px-4 py-1 rounded-lg hover:text-purple-600 hover:border-purple-600"
-                      >
-                        Sign up
-                      </a>
+                    <div className="  top flex justify-between items-center border-t-2 pt-2">
+                      {!authBoolean ? (
+                        <a
+                          to="/login"
+                          href="/login"
+                          class="text-black text-sm font-semibold hover:underline hover:text-white hover:rounded-sm px-1 hover:bg-black mr-4"
+                        >
+                          Login
+                        </a>
+                      ) : (
+                        <a
+                          to="/login"
+                          href="/login"
+                          onClick={signUserOut}
+                          class="text-black text-sm font-semibold hover:underline hover:text-white hover:rounded-sm px-1 hover:bg-black mr-4"
+                        >
+                          Log out
+                        </a>
+                      )}
                     </div>
                   </div>
                 </div>

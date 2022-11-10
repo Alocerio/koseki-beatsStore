@@ -1,6 +1,11 @@
 import React from "react";
 import YoutubeEmbed from "./VideoYt.jsx";
 const BeatCard = ({ id, name, videoUrl, tags }) => {
+  const handleClick = () => {
+    return alert(
+      "Unfortunately buy button is not available right now, We apologies"
+    );
+  };
   return (
     <li key={id} className="flex justify-center p-2 ">
       <div className="block p-6 rounded-lg hover:border-2 hover:shadow-2xl hover:cursor-pointer hover:border-secundary shadow-lg bg-white max-w-sm">
@@ -17,8 +22,9 @@ const BeatCard = ({ id, name, videoUrl, tags }) => {
         <button
           type="button"
           className="border rounded  py-1 px-5 text-center inline-block shadow-lg hover:text-white hover:bg-black "
+          onClick={handleClick}
         >
-          Go to buy
+          I'm interested
         </button>
       </div>
     </li>

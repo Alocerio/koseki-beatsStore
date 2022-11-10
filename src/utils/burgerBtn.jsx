@@ -6,7 +6,7 @@ const BurgerBtn = ({ clicked, handleClick }) => {
     <Burger>
       <div
         onClick={handleClick}
-        class={`icon nav-icon-4 ${clicked ? "open" : ""}`}
+        className={`icon nav-icon-4 ${clicked ? "open" : ""}`}
       >
         <span></span>
         <span></span>

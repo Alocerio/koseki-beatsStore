@@ -7,27 +7,6 @@ export const GetBeats = async function () {
 
 export const beatsList = [
   {
-    id: 1111,
-    name: "Timeless",
-    bpm: 87,
-    videoUrl: "6tiI9u7f8-U",
-    tags: ["chill,", "boombap,", "low-bap"],
-  },
-  {
-    id: 41,
-    name: "Timeless",
-    bpm: 87,
-    videoUrl: "6tiI9u7f8-U",
-    tags: ["chill,", "boombap,", "low-bap"],
-  },
-  {
-    id: 11,
-    name: "Timeless",
-    bpm: 87,
-    videoUrl: "6tiI9u7f8-U",
-    tags: ["chill,", "boombap,", "low-bap"],
-  },
-  {
     id: 0,
     name: "Timeless",
     bpm: 87,
@@ -39,13 +18,13 @@ export const beatsList = [
     name: "Crime",
     bpm: 80,
     videoUrl: "zHehleec5dg",
-    tags: ["dark,", "boombap"],
+    tags: ["dark,", "boombap", "hard"],
   },
   {
     id: 3,
     name: "Low raiders",
     bpm: 84,
     videoUrl: "wWhmTRV5jW4",
-    tags: ["drumless,", "boombap,", "west side"],
+    tags: ["drumless,", "west side"],
   },
 ];
