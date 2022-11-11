@@ -1,5 +1,5 @@
 import { Fragment, useState } from "react";
-import { useNavigate, NavigationType, Route, Routes } from "react-router-dom";
+import { useNavigate, Route, Routes } from "react-router-dom";
 import SearchPage from "./pages/SearchPage";
 import Catalog from "../src/pages/Catalog.jsx";
 import Footer from "./components/Footer";
@@ -8,12 +8,23 @@ import Navbar from "./components/Navbar";
 import Login from "./components/Login";
 
 import { signOut } from "firebase/auth";
-import { auth } from "./firebase-config";
+import { db, auth } from "./firebase-config";
+import { collection, getDocs, addDoc } from "firebase/firestore";
 
 function App() {
+  //new user States
+  const [newName, setNewName] = useState("");
+  const [newPassword, setNewPassword] = useState("");
+  //if auth states
   const [isAuth, setIsAuth] = useState(false);
   const navigate = useNavigate();
-
+  const userCollectionRef = collection(db, "users");
+  const createUser = async () => {
+    await addDoc(userCollectionRef, { name: newName, password: newPassword });
+    localStorage.setItem("isAuth", true);
+    setIsAuth(true);
+    navigate("/");
+  };
   const signUserOut = () => {
     signOut(auth).then(() => {
       localStorage.clear();
@@ -32,6 +43,9 @@ function App() {
           path="/login"
           element={
             <Login
+              setNewName={setNewName}
+              setNewPassword={setNewPassword}
+              createUser={createUser}
               isAuth={isAuth}
               setIsAuth={setIsAuth}
               signUserOut={signUserOut}
