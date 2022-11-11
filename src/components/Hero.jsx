@@ -1,4 +1,3 @@
-//https://www.youtube.com/watch?v=FmalodIhcK4&ab_channel=Koseki
 const Hero = () => {
   return (
     <section className="flex justify-center items-center sx:px-3 h-screen">

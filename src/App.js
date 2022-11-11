@@ -1,4 +1,4 @@
-import { Fragment, useState } from "react";
+import { Fragment, useState, useEffect } from "react";
 import { useNavigate, Route, Routes } from "react-router-dom";
 import SearchPage from "./pages/SearchPage";
 import Catalog from "../src/pages/Catalog.jsx";
@@ -19,6 +19,18 @@ function App() {
   const [isAuth, setIsAuth] = useState(false);
   const navigate = useNavigate();
   const userCollectionRef = collection(db, "users");
+  const beatsCollectionRef = collection(db, "beats");
+  const [beats, setBeats] = useState([]);
+
+  useEffect(() => {
+    const getBeats = async () => {
+      const data = await getDocs(beatsCollectionRef);
+      setBeats(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+    };
+
+    getBeats();
+  }, []);
+
   const createUser = async () => {
     await addDoc(userCollectionRef, { name: newName, password: newPassword });
     localStorage.setItem("isAuth", true);
@@ -38,7 +50,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/search" element={<SearchPage />} />
-        <Route path="/beats" element={<Catalog />} />
+        <Route path="/beats" element={<Catalog beats={beats} />} />
         <Route
           path="/login"
           element={
