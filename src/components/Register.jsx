@@ -1,39 +1,18 @@
 import React from "react";
-import { auth, provider } from "../firebase-config";
-import { signInWithPopup } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
 
-const Login = ({
+const Register = ({
   isAuth,
   setIsAuth,
   createUser,
   setNewName,
   setNewPassword,
+  signInWithGoogle,
 }) => {
-  const navigate = useNavigate();
-
-  const signInWithGoogle = () => {
-    signInWithPopup(auth, provider).then((result) => {
-      localStorage.setItem("isAuth", true);
-      setIsAuth(true);
-      navigate("/");
-    });
-  };
-
   return (
     <div class="flex justify-center h-screen w-screen items-center">
       <div class="w-full md:w-1/2 flex flex-col items-center ">
-        <h1 class="text-center text-2xl font-bold mb-6">LOGIN</h1>
-        <div class="w-3/4 mt-4">
-          <button
-            type="submit"
-            class="py-4 mb-4 bg-blue-400 w-full rounded text-white bg-black font-bold hover:bg-secondary"
-            onClick={signInWithGoogle}
-          >
-            {" "}
-            Log in with Google
-          </button>
-        </div>
+        <h1 class="text-center text-2xl font-bold mb-6">Register</h1>
+        <div class="w-3/4 mt-4"></div>
         <div class="w-3/4 mb-6">
           <input
             type="email"
@@ -83,18 +62,18 @@ const Login = ({
             {" "}
             Log in
           </button>
-          <a
+          <button
             type="submit"
             class="py-4 mb-2 bg-blue-400 w-full rounded text-white bg-black font-bold hover:bg-secondary"
             href="/register"
           >
             {" "}
-            Create new account?
-          </a>
+            <a href="/login">Already have an account?</a>
+          </button>
         </div>
       </div>
     </div>
   );
 };
 
-export default Login;
+export default Register;

@@ -6,7 +6,7 @@ import Footer from "./components/Footer";
 import HomePage from "./pages/HomePage";
 import Navbar from "./components/Navbar";
 import Login from "./components/Login";
-
+import Register from "./components/Register";
 import { signOut } from "firebase/auth";
 import { db, auth } from "./firebase-config";
 import { collection, getDocs, addDoc } from "firebase/firestore";
@@ -55,6 +55,19 @@ function App() {
           path="/login"
           element={
             <Login
+              setNewName={setNewName}
+              setNewPassword={setNewPassword}
+              createUser={createUser}
+              isAuth={isAuth}
+              setIsAuth={setIsAuth}
+              signUserOut={signUserOut}
+            />
+          }
+        />
+        <Route
+          path="/register"
+          element={
+            <Register
               setNewName={setNewName}
               setNewPassword={setNewPassword}
               createUser={createUser}

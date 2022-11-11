@@ -8,8 +8,10 @@ const Catalog = ({ beats }) => {
       </h1>
       <div className="text-center p-5 flex flex-wrap justify-center mb-36">
         {beats.map((beat) => {
-          const { name, videoUrl, bpm } = beat;
-          return <BeatCard name={name} videoUrl={videoUrl} bpm={bpm} />;
+          const { name, videoUrl, bpm, price } = beat;
+          return (
+            <BeatCard name={name} videoUrl={videoUrl} bpm={bpm} price={price} />
+          );
         })}
       </div>
     </>

@@ -1,6 +1,6 @@
 import React from "react";
 import YoutubeEmbed from "./VideoYt.jsx";
-const BeatCard = ({ name, videoUrl, bpm }) => {
+const BeatCard = ({ name, videoUrl, bpm, price }) => {
   const handleClick = () => {
     return alert(
       "Unfortunately to buy is not available right now, We apologies"
@@ -13,10 +13,18 @@ const BeatCard = ({ name, videoUrl, bpm }) => {
           {name}
         </h5>
         <YoutubeEmbed videoUrl={videoUrl} />
+        <div>
+          {bpm ? <p>BPM: {bpm}</p> : ""}
+          {price ? (
+            <p className="text-gray-700 text-base p-1 mb-4">Price: ${price}</p>
+          ) : (
+            ""
+          )}
+        </div>
 
         <button
           type="button"
-          className="border rounded  py-1 px-5 text-center inline-block shadow-lg hover:text-white hover:bg-black "
+          className="border mt-2 rounded  py-1 px-5 text-center inline-block shadow-lg hover:text-white hover:bg-black "
           onClick={handleClick}
         >
           I'm interested
